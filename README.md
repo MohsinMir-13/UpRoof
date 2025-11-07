@@ -1,5 +1,3 @@
-yarn install
-yarn dev
 ## UpRoof Website (Private)
 
 Live site: https://uproof.eu
