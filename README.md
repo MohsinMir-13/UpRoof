@@ -21,4 +21,3 @@ All code, content, translations, schemas, media, and design elements are proprie
 Repository inquiries: mohsinmaqboolmir@gmail.com
 
 © 2025 UpRoof. All rights reserved.
-
