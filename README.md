@@ -1,4 +1,4 @@
-### Copyright Notice
+Copyright Notice
 Copyright © 2025 UpRoof. All rights reserved.
 
 This repository, including all source code, architecture, UI/UX design, visual design system, color palette, layout structure, branding, copy, translations, content, media, schemas, and related assets, is the exclusive property of UpRoof.
@@ -13,11 +13,10 @@ Multilingual roofing services website built with Next.js 14 (App Router), TypeSc
 
 This is a private repository. It must not be cloned, copied, redistributed, or used outside authorized purposes.
 
-
-### Ownership and Use
+Ownership and Use
 All code, content, translations, schemas, media, and design elements are proprietary to UpRoof. Unauthorized use, redistribution, or adaptation is prohibited.
 
-### Contact
-Repository inquiries: mohsinmaqboolmir@gmail.com
+Contact
+Repository inquiries: https://github.com/MohsinMir-13
 
 © 2025 UpRoof. All rights reserved.
