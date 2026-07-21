@@ -21,20 +21,6 @@ export async function POST(request: Request) {
     return NextResponse.json({error: 'Missing required fields.'}, {status: 400});
   }
 
-  await fetch(new URL('/api/admin/contact-messages', request.url), {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      name,
-      email,
-      phone: phone || undefined,
-      subject,
-      message,
-    }),
-  });
-
   const outbound = new FormData();
   outbound.append('access_key', formKey);
   outbound.append('name', name);

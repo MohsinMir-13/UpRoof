@@ -66,25 +66,6 @@ export default function ContactSection() {
     }
     
     try {
-      // Save to admin contact messages database
-      const msgResponse = await fetch('/api/admin/contact-messages', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: sanitizedData.name,
-          email: sanitizedData.email,
-          phone: sanitizedData.phone || undefined,
-          subject: sanitizedData.name + ' - Contact Form Submission',
-          message: sanitizedData.message,
-        })
-      });
-
-      if (!msgResponse.ok) {
-        throw new Error('Failed to save contact message');
-      }
-
       // Send through the server proxy so the Web3Forms key never reaches the browser.
       const response = await fetch('/api/contact', {
         method: 'POST',
