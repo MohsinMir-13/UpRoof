@@ -11,12 +11,12 @@ export function slugifyCareerTitle(value: string) {
     .replace(/^-+|-+$/g, '');
 }
 
-export function getCareerJobPath(locale: string, job: Pick<CareerJob, 'slug'>) {
-  return `/${locale}/career/${job.slug}`;
+export function getCareerJobPath(_locale: string, job: Pick<CareerJob, 'slug'>) {
+  return `/career/${job.slug}`;
 }
 
 export function getCareerJobUrl(locale: string, job: Pick<CareerJob, 'slug'>) {
-  return `https://uproof.eu${getCareerJobPath(locale, job)}`;
+  return `https://uproof.eu/${locale}/career/${job.slug}`;
 }
 
 export function getCareerJobStructuredData(job: CareerJob, locale: string, jobUrl?: string) {
@@ -76,7 +76,7 @@ export function getCareerSitemapEntries(jobs: CareerJob[]) {
     jobs
       .filter((job) => job.active !== false)
       .map((job) => ({
-        url: `https://uproof.eu${getCareerJobPath(locale, job)}`,
+        url: getCareerJobUrl(locale, job),
         lastmod: job.updatedAt || job.validThrough || job.datePosted || new Date().toISOString(),
       })),
   );

@@ -49,7 +49,7 @@ const META: Record<string, {title: Record<string, string>; description: Record<s
       en: 'Full-cycle roof renovation in Riga and Pieriga: structure renewal, insulation, roofing replacement, skylight installation. Certified craftsmen, 10-year warranty. Serving Riga, Jurmala, Jelgava.',
       'nl-BE': 'Volledige dakrenovatie in België: structuurvernieuwing, isolatie, dakbedekkingsvervanging, dakraaminstallatie. Gecertificeerde vakmannen, 10 jaar garantie. Actief in Kortrijk, Gent, Brugge, Antwerpen.'
     },
-    keywords: 'jumta renovācija Rīgā, jumta renovācija Latvijā, jumta renovācija un būvniecība, jumta nomaiņa Rīgā, jumta seguma maiņa, jumta atjaunošana Rīgā, jumta remonts Pierīgā, roof renovation Riga, dakrenovatie België'
+    keywords: 'jumta renovācija Rīgā, jumta renovācija Latvijā, jumta nomaiņa Rīgā, jumta seguma maiņa, jumta atjaunošana Rīgā, jumta remonts Pierīgā, jumta nomaiņa, roof renovation Riga, dakrenovatie België'
   },
   'valcprofila-montaza': {
     title: {
@@ -62,7 +62,7 @@ const META: Record<string, {title: Record<string, string>; description: Record<s
       en: 'Standing seam metal roofing installation in Riga and Latvia with fully hermetic double-lock solutions. Professional sheet metal work with precise connections to windows and chimneys. 10-year warranty. Serving Riga, Pieriga, Jurmala.',
       'nl-BE': 'Staande naad metalen dakbedekking installatie in België met volledig hermetische dubbele sluitoplossingen. Professioneel plaatwerk met precieze aansluitingen op ramen en schoorstenen. 10 jaar garantie. Actief in Kortrijk, Gent, Brugge.'
     },
-    keywords: 'valcprofila jumta montāža, valcprofila montāža Rīgā, valcprofila jumta montāža Rīgā, valcprofila jumts Latvijā, metāla jumta montāža Rīgā, stāvošā šuve, valcprofils, metāla jumts Rīgā, skārda jumts, skārdnieka darbi, jumta ieklāšana, falcētais jumts, standing seam roofing Riga, staande naad dakbedekking België'
+    keywords: 'valcprofila jumta montāža, valcprofila montāža Rīgā, metāla jumta montāža Rīgā, valcprofila jumts Latvijā, stāvošā šuve, metāla jumts Rīgā, skārda jumts, jumta ieklāšana, standing seam roofing Riga, staande naad dakbedekking België'
   },
   'dakstinu-montaza': {
     title: {
@@ -127,7 +127,7 @@ const META: Record<string, {title: Record<string, string>; description: Record<s
       en: 'Full-cycle roof construction in Riga from design to finished roof: structure, insulation materials, covering, drainage systems. 10-year warranty. Serving Riga, Pieriga, Jurmala, Jelgava.',
       'nl-BE': 'Volledige dakbouw in België van ontwerp tot voltooid dak: structuur, isolatiematerialen, bedekking, afvoersystemen. 10 jaar garantie. Actief in Kortrijk, Gent, Brugge, Antwerpen, Brussel.'
     },
-    keywords: 'jumta būvniecība, jumta būvniecība Rīgā, jumta būvniecība Latvijā, jumta darbi Rīgā, jumta seguma montāža, jumta ieklāšana Rīgā, jumtu būvniecība Latvijā, jauna jumta celtniecība Rīgā, roof construction Riga, dakbouw België'
+    keywords: 'jumta būvniecība, jumta būvniecība Rīgā, jumta būvniecība Latvijā, jumta darbi Rīgā, jumta seguma montāža, jumta ieklāšana Rīgā, jumta konstrukcija, jauna jumta celtniecība Rīgā, roof construction Riga, dakbouw België'
   },
   'jumta-konstrukciju-montaza': {
     title: {
@@ -153,7 +153,7 @@ const META: Record<string, {title: Record<string, string>; description: Record<s
       en: 'Roof leak or need maintenance? Fast emergency response, gutter cleaning, roof washing, damage repair in Riga. Drone diagnostics, snow/moss removal, chimney sealing. Free assessment in Riga and Pieriga.',
       'nl-BE': 'Dakonderhoud in België: schadediagnose, reparatie, gootreiniging, sneeuw- en bladverwijdering, schoorsteenafwerking. Regelmatig onderhoud verlengt daklevensduur. Service in Kortrijk, Gent, Brugge, Deinze, Waregem.'
     },
-    keywords: 'jumta apkope Rīgā, jumta remonts Rīgā, jumta darbi, jumts tek, jumta noplūde, noteku tīrīšana Rīgā, noteku montāža, jumta tīrīšana, jumta mazgāšana, avārijas remonts, lāsteku noņemšana, sniega tīrīšana jumtiem, skursteņa apdare, roof maintenance Riga, dakonderhoud België'
+    keywords: 'jumta apkope Rīgā, jumta remonts Rīgā, jumta darbi, jumts tek, jumta noplūde, noteku tīrīšana Rīgā, noteku montāža, jumta tīrīšana, jumta mazgāšana, avārijas remonts, lāsteku noņemšana, sniega tīrīšana no jumta, skursteņa apdare, roof maintenance Riga, dakonderhoud België'
   },
   'noteksistemu-uzstadisana': {
     title: {

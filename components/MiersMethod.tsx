@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import {Link} from '@/i18n/routing';
 
 type Props = {
   locale: string;
@@ -23,7 +23,7 @@ export default function MiersMethod({ locale, variant = 'full' }: Props) {
           </p>
         </div>
         <Link 
-          href={`/${locale}/about`}
+          href="/about"
           className="whitespace-nowrap px-5 py-2.5 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-500 transition-all duration-300 shadow-lg shadow-primary-600/25 hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-2 text-sm"
         >
           {locale === 'lv' && 'Uzzināt vairāk'}

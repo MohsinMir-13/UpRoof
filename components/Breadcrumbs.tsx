@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { usePathname } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 
@@ -30,7 +30,7 @@ export default function Breadcrumbs() {
           {/* Home */}
           <li>
             <Link 
-              href={`/${locale}`}
+              href="/"
               className="flex items-center text-gray-500 hover:text-primary-600 transition-colors"
               aria-label={t('home')}
             >
@@ -43,7 +43,7 @@ export default function Breadcrumbs() {
 
           {/* Dynamic segments */}
           {segments.map((segment, index) => {
-            const href = `/${locale}/${segments.slice(0, index + 1).join('/')}`;
+            const href = `/${segments.slice(0, index + 1).join('/')}`;
             const isLast = index === segments.length - 1;
             const name = routeNames[segment] || segment;
 

@@ -1,5 +1,5 @@
 import type {Metadata} from 'next';
-import Link from 'next/link';
+import {Link} from '@/i18n/routing';
 import {notFound} from 'next/navigation';
 import {getTranslations} from 'next-intl/server';
 import Header from '@/components/Header';
@@ -44,6 +44,12 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
   return {
     title,
     description,
+    keywords: [
+      locale === 'lv' ? 'jumta darba vakance' : locale === 'nl-BE' ? 'dakwerk vacature' : 'roofing job',
+      locale === 'lv' ? 'darbs jumiķiem' : locale === 'nl-BE' ? 'dakwerker vacature' : 'roofing career',
+      locale === 'lv' ? 'jumta nozare Latvijā' : locale === 'nl-BE' ? 'dakwerk Letland' : 'roofing jobs Latvia',
+      job.title,
+    ],
     alternates: {
       canonical,
       languages: {
@@ -100,13 +106,13 @@ export default async function CareerJobPage({params}: Props) {
         <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
           <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
             <li>
-              <Link href={`/${locale}`} className="hover:text-primary-600">
+              <Link href="/" className="hover:text-primary-600">
                 {t('heroKicker')}
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
-              <Link href={`/${locale}/career`} className="hover:text-primary-600">
+              <Link href="/career" className="hover:text-primary-600">
                 {t('jobsLabel')}
               </Link>
             </li>
@@ -187,7 +193,7 @@ export default async function CareerJobPage({params}: Props) {
                   {relatedJobs.map((entry) => (
                     <li key={entry.id}>
                       <Link
-                        href={`/${locale}/career/${entry.slug}`}
+                        href={`/career/${entry.slug}`}
                         className="text-sm font-medium text-primary-700 hover:text-primary-800"
                       >
                         {entry.title}

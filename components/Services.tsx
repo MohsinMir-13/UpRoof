@@ -16,10 +16,10 @@ export default function Services({ limit }: ServicesProps) {
   const locale = useLocale();
   const router = useRouter();
   const strapline = locale === 'lv'
-    ? 'Jumiķa pakalpojumi, jumta darbi, jumta remonts, jumta renovācija un jumta montāža Rīgā, Mārupē, Jūrmalā, Ādažos un Siguldā.'
+    ? 'Jumiķa pakalpojumi, jumta būvniecība, jumta renovācija, jumta remonts, jumta apkope, valcprofila jumts un sniega tīrīšana no jumta Rīgā, Mārupē, Jūrmalā, Ādažos un Siguldā.'
     : locale === 'nl-BE'
-    ? 'Dakdiensten, dakwerken, dakreparatie en dakrenovatie in heel België.'
-    : 'Roofing services, roof work, roof repair and roof renovation across Latvia.';
+    ? 'Dakdiensten, dakbouw, dakrenovatie, dakreparatie, dakonderhoud, staande naad en sneeuwruiming in heel België.'
+    : 'Roofing services, roof construction, roof renovation, roof repair, roof maintenance, standing seam roofing and snow removal across Latvia.';
 
   const isInteractiveTarget = (target: EventTarget | null): boolean => {
     if (!(target instanceof Element)) return false;
