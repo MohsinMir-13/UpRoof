@@ -33,18 +33,24 @@ const keywords: Record<string, string[]> = {
     'vakances jumta nozarē',
     'darbs jumta nozarē Latvijā',
     'jumiķu vakances',
+    'jumta darba vakances',
+    'jumiķu darba piedāvājumi',
   ],
   en: [
     'roofing jobs Latvia',
     'professional roofers',
     'roofing assistants',
     'roofing vacancies',
+    'roofing career Latvia',
+    'roofing jobs Riga',
   ],
   'nl-BE': [
     'dakwerk vacatures',
     'dakwerkers',
     'assistent dakwerker',
     'jobs in de daksector',
+    'dakwerk carrière Letland',
+    'dakwerk vacatures Letland',
   ],
 };
 

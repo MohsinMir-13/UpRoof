@@ -16,14 +16,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 
   const titles: Record<string, string> = {
-    lv: 'Jumta pakalpojumi Latvijā | UpRoof',
-    en: 'Professional Roofing Services in Latvia | UpRoof',
-    'nl-BE': 'Professionele Dakdiensten in Letland | UpRoof',
+    lv: 'Jumta būvniecība, jumta renovācija, jumta remonts un jumta apkope Latvijā | UpRoof',
+    en: 'Roof Construction, Roof Renovation, Roof Repair & Roofing Services in Latvia | UpRoof',
+    'nl-BE': 'Dakbouw, dakrenovatie, dakreparatie en dakdiensten in Letland | UpRoof',
   };
   const descriptions: Record<string, string> = {
-    lv: 'Profesionāli jumta pakalpojumi Rīgā, Pierīgā un visā Latvijā: būvniecība, renovācija, remonts, valcprofils, dakstiņi, noteksistēmas un apkope.',
-    en: 'A full range of professional roofing services across Riga and Latvia: construction, renovation, repair, standing seam roofing, tile roofs, gutters and maintenance.',
-    'nl-BE': 'Volledig scala aan professionele dakdiensten in heel Letland: dakbouw, renovatie, reparatie, staande naad, pannendaken, goten en onderhoud.',
+    lv: 'Profesionāli jumta pakalpojumi Rīgā, Pierīgā un visā Latvijā: jumta būvniecība, jumta renovācija, jumta remonts, valcprofila jumts, dakstiņu jumts, noteku montāža, sniega tīrīšana no jumta un jumta apkope.',
+    en: 'A full range of professional roofing services across Riga and Latvia: roof construction, roof renovation, roof repair, standing seam roofing, tile roofs, gutter installation, snow removal and roof maintenance.',
+    'nl-BE': 'Volledig scala aan professionele dakdiensten in heel Letland: dakbouw, dakrenovatie, dakreparatie, staande naad, pannendaken, gootinstallatie, sneeuwruiming en dakonderhoud.',
   };
 
   return {
@@ -248,10 +248,36 @@ export default async function ServicesPage({params}: {params: Promise<{locale: s
               {locale === 'nl-BE' && 'UpRoof professionele dakdiensten in Letland'}
             </h1>
             <p className="text-lg text-gray-300 leading-relaxed">
-              {locale === 'lv' && 'Pilns spektrs profesionālu jumta pakalpojumu Rīgā, Pierīgā un visā Latvijā: jumta būvniecība, jumta renovācija, jumta remonts, jumta apkope, noteksistēmu uzstādīšana un sniega tīrīšana 24/7. Sertificēti meistari ar 10 gadu garantiju.'}
-              {locale === 'en' && 'A full range of professional roofing services across Riga, Jurmala, and Latvia, including construction, renovation, repair, metal roofing, tile roofs, painting, gutter systems, and 24/7 snow and ice removal. Certified specialists with a 10-year warranty.'}
-              {locale === 'nl-BE' && 'Volledig scala aan professionele dakdiensten in heel Letland: constructie, renovatie, reparatie, metalen daken, pannendaken, coating, goten, sneeuwruiming 24/7. Gecertificeerde specialisten met 10 jaar garantie.'}
+              {locale === 'lv' && 'Pilns spektrs profesionālu jumta pakalpojumu Rīgā, Pierīgā un visā Latvijā: jumta būvniecība, jumta renovācija, jumta remonts, jumta apkope, valcprofila jumts, dakstiņu jumts, noteksistēmu uzstādīšana un sniega tīrīšana 24/7. Sertificēti meistari ar 10 gadu garantiju.'}
+              {locale === 'en' && 'A full range of professional roofing services across Riga, Jurmala, and Latvia, including roof construction, roof renovation, roof repair, metal roofing, tile roofs, painting, gutter systems, and 24/7 snow and ice removal. Certified specialists with a 10-year warranty.'}
+              {locale === 'nl-BE' && 'Volledig scala aan professionele dakdiensten in heel Letland: dakbouw, renovatie, reparatie, metalen daken, pannendaken, coating, goten, sneeuwruiming 24/7 en dakonderhoud. Gecertificeerde specialisten met 10 jaar garantie.'}
             </p>
+            <div className="mt-4 flex flex-wrap gap-2 text-sm text-primary-200">
+              {locale === 'lv' && (
+                <>
+                  <span className="rounded-full border border-white/20 px-3 py-1">jumta būvniecība</span>
+                  <span className="rounded-full border border-white/20 px-3 py-1">jumta renovācija</span>
+                  <span className="rounded-full border border-white/20 px-3 py-1">jumta remonts</span>
+                  <span className="rounded-full border border-white/20 px-3 py-1">sniega tīrīšana no jumta</span>
+                </>
+              )}
+              {locale === 'en' && (
+                <>
+                  <span className="rounded-full border border-white/20 px-3 py-1">roof construction</span>
+                  <span className="rounded-full border border-white/20 px-3 py-1">roof renovation</span>
+                  <span className="rounded-full border border-white/20 px-3 py-1">roof repair</span>
+                  <span className="rounded-full border border-white/20 px-3 py-1">snow removal from roof</span>
+                </>
+              )}
+              {locale === 'nl-BE' && (
+                <>
+                  <span className="rounded-full border border-white/20 px-3 py-1">dakbouw</span>
+                  <span className="rounded-full border border-white/20 px-3 py-1">dakrenovatie</span>
+                  <span className="rounded-full border border-white/20 px-3 py-1">dakreparatie</span>
+                  <span className="rounded-full border border-white/20 px-3 py-1">sneeuwruiming van dak</span>
+                </>
+              )}
+            </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
                 href={`/${locale}/services/seasonal`}

@@ -5,7 +5,7 @@ import {useLocale} from 'next-intl';
 import {motion} from 'framer-motion';
 import {StarIcon} from '@heroicons/react/24/solid';
 import {useEffect, useRef, useState} from 'react';
-import Link from 'next/link';
+import {Link} from '@/i18n/routing';
 
 export default function Reviews() {
   const t = useTranslations('reviews');
@@ -173,7 +173,7 @@ export default function Reviews() {
           transition={{duration: 0.6}}
           className="text-center"
         >
-          <Link href={`/${locale}/reviews`} className="group inline-block">
+          <Link href="/reviews" className="group inline-block">
             <span className="inline-block text-sm font-semibold tracking-wider uppercase text-primary-600 mb-3">Testimonials</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors tracking-tight">
               {t('title')}

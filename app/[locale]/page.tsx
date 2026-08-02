@@ -40,15 +40,15 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
   };
 
   const titles: Record<string, string> = {
-    lv: 'UpRoof | Jumta pakalpojumi, remonts un renovācija Latvijā',
-    en: 'Professional Roofing Services in Latvia | UpRoof',
-    'nl-BE': 'Professionele Dakdiensten in Letland | UpRoof',
+    lv: 'UpRoof | Jumta būvniecība, jumta renovācija, jumta remonts un jumta apkope Latvijā',
+    en: 'Roof Repair, Roof Renovation & Roofing Services in Latvia | UpRoof',
+    'nl-BE': 'Dakreparatie, dakrenovatie en dakdiensten in Letland | UpRoof',
   };
 
   const descriptions: Record<string, string> = {
-    lv: 'Profesionāli jumta pakalpojumi, jumta darbi un jumta remonts Rīgā, Pierīgā un visā Latvijā: būvniecība, renovācija, valcprofils, dakstiņi, noteksistēmas un apkope ar garantiju.',
-    en: 'Professional roofing services in Riga and throughout Latvia: construction, renovation, repair, standing seam roofing, tile roofs, gutters and maintenance with warranty.',
-    'nl-BE': 'Professionele dakdiensten in Letland: dakbouw, renovatie, reparatie, staande naad, pannendaken, goten en onderhoud met garantie.',
+    lv: 'Profesionāli jumta pakalpojumi Rīgā, Pierīgā un visā Latvijā: jumta būvniecība, jumta renovācija, jumta remonts, valcprofila jumts, dakstiņu jumts, noteksistēmas, sniega tīrīšana no jumta un apkope ar garantiju.',
+    en: 'Professional roofing services in Riga and throughout Latvia: roof construction, roof renovation, roof repair, standing seam roofing, tile roofs, gutters, snow removal and maintenance with warranty.',
+    'nl-BE': 'Professionele dakdiensten in Letland: dakbouw, dakrenovatie, dakreparatie, staande naad, pannendaken, goten, sneeuwruiming en onderhoud met garantie.',
   };
 
   return {
@@ -65,16 +65,16 @@ export default async function HomePage({params}: Props) {
   const {locale} = await params;
 
   const bannerText: Record<string, {title: string; cta: string}> = {
-    lv: {title: 'Jumta pakalpojumi, jumta darbi un jumta remonts — bezmaksas diagnostika', cta: 'Pieteikt apskati'},
-    en: {title: 'Roof Repair & Renovation — Free Roof Diagnostics', cta: 'Book inspection'},
-    'nl-BE': {title: 'Dakreparatie & renovatie — Gratis dakdiagnose', cta: 'Plan inspectie'},
+    lv: {title: 'Jumta būvniecība, jumta renovācija, jumta remonts un jumta apkope — bezmaksas diagnostika', cta: 'Pieteikt apskati'},
+    en: {title: 'Roof repair, roof renovation, standing seam roofing and snow removal — free roof diagnostics', cta: 'Book inspection'},
+    'nl-BE': {title: 'Dakreparatie, dakrenovatie, staande naad en sneeuwruiming — gratis dakdiagnose', cta: 'Plan inspectie'},
   };
   const banner = bannerText[locale] || bannerText.lv;
 
   const seoIntro: Record<string, string> = {
-    lv: 'Jumiķa pakalpojumi, jumiķi, jumta darbi, jumta remonts, jumta labošana, jumta atjaunošana, jumta renovācija, jumta nomaiņa, jumta montāža un jumta būvniecība Rīgā, Mārupē, Jūrmalā, Ādažos, Siguldā, Pierīgā un visā Latvijā.',
-    en: 'Our core focus is roofing services, roof repairs, roof renovation and roof installation in Riga and throughout Latvia.',
-    'nl-BE': 'Onze kernfocus ligt op dakdiensten, dakreparatie, dakrenovatie en dakinstallatie in Letland.',
+    lv: 'Jumiķa pakalpojumi, jumta darbi, jumta remonts, jumta labošana, jumta atjaunošana, jumta renovācija, jumta nomaiņa, jumta montāža, jumta būvniecība, valcprofila jumts, dakstiņu jumts, noteku montāža un sniega tīrīšana no jumta Rīgā, Mārupē, Jūrmalā, Ādažos, Siguldā, Pierīgā un visā Latvijā.',
+    en: 'Our core focus is roofing services, roof repair, roof renovation, roof installation, standing seam roofing, gutter installation, snow removal and roof maintenance in Riga and throughout Latvia.',
+    'nl-BE': 'Onze kernfocus ligt op dakdiensten, dakreparatie, dakrenovatie, dakinstallatie, staande naad, gootsystemen, sneeuwruiming en dakonderhoud in Letland.',
   };
 
   const statsData: Record<string, {value: string; label: string}[]> = {
