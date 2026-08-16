@@ -105,6 +105,32 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function ServicesPage({params}: {params: Promise<{locale: string}>}) {
   const {locale} = await params;
   const t = await getTranslations('pages.services');
+  const seoPhrasesLv = [
+    'Valcprofila montāža',
+    'Jumta renovācija',
+    'Jumta nomaiņa',
+    'Jumta montāža',
+    'Jumta būvniecība',
+    'Jumiķa pakalpojumi',
+    'Jumiķi',
+    'Jumta darbi',
+    'Jumta atjaunošana',
+    'Jumta remonts',
+    'Jumta labošana',
+    'Jauns jumts',
+    'Jumta izbūve',
+    'Jumta seguma nomaiņa',
+    'Jumta seguma montāža',
+    'Jumta uzstādīšana',
+    'Jumta rekonstrukcija',
+    'Jumta pārbūve',
+    'Jumta maiņa',
+    'Valcprofila jumts',
+    'Metāla jumts',
+    'Skārda jumts',
+    'Dakstiņu jumts',
+    'Jumta loksnes',
+  ];
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',

@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/admin/', '/admin/', '/uploads/'],
+        disallow: ['/uploads/'],
       },
     ],
     sitemap: ['https://uproof.eu/sitemap_index.xml'],
