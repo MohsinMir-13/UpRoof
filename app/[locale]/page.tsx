@@ -40,13 +40,13 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
   };
 
   const titles: Record<string, string> = {
-    lv: 'UpRoof | Jumta būvniecība, jumta renovācija, jumta remonts un jumta apkope Latvijā',
+    lv: 'UpRoof | Jumiķa pakalpojumi, jumta darbi, jumta remonts un jumta būvniecība Latvijā',
     en: 'Roof Repair, Roof Renovation & Roofing Services in Latvia | UpRoof',
     'nl-BE': 'Dakreparatie, dakrenovatie en dakdiensten in Letland | UpRoof',
   };
 
   const descriptions: Record<string, string> = {
-    lv: 'Profesionāli jumta pakalpojumi Rīgā, Pierīgā un visā Latvijā: jumta būvniecība, jumta renovācija, jumta remonts, valcprofila jumts, dakstiņu jumts, noteksistēmas, sniega tīrīšana no jumta un apkope ar garantiju.',
+    lv: 'Profesionāli jumta pakalpojumi Rīgā, Pierīgā un visā Latvijā: jumiķi, jumiķa pakalpojumi, jumta darbi, jumta renovācija, jumta remonts, jumta nomaiņa, jumta montāža, jumta atjaunošana, jumta labošana, jumta būvniecība, valcprofila jumts, metāla jumts, skārda jumts, dakstiņu jumts un jumta loksnes ar garantiju.',
     en: 'Professional roofing services in Riga and throughout Latvia: roof construction, roof renovation, roof repair, standing seam roofing, tile roofs, gutters, snow removal and maintenance with warranty.',
     'nl-BE': 'Professionele dakdiensten in Letland: dakbouw, dakrenovatie, dakreparatie, staande naad, pannendaken, goten, sneeuwruiming en onderhoud met garantie.',
   };
@@ -64,18 +64,46 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
 export default async function HomePage({params}: Props) {
   const {locale} = await params;
 
-  const bannerText: Record<string, {title: string; cta: string}> = {
-    lv: {title: 'Jumta būvniecība, jumta renovācija, jumta remonts un jumta apkope — bezmaksas diagnostika', cta: 'Pieteikt apskati'},
-    en: {title: 'Roof repair, roof renovation, standing seam roofing and snow removal — free roof diagnostics', cta: 'Book inspection'},
-    'nl-BE': {title: 'Dakreparatie, dakrenovatie, staande naad en sneeuwruiming — gratis dakdiagnose', cta: 'Plan inspectie'},
-  };
-  const banner = bannerText[locale] || bannerText.lv;
-
   const seoIntro: Record<string, string> = {
-    lv: 'Jumiķa pakalpojumi, jumta darbi, jumta remonts, jumta labošana, jumta atjaunošana, jumta renovācija, jumta nomaiņa, jumta montāža, jumta būvniecība, valcprofila jumts, dakstiņu jumts, noteku montāža un sniega tīrīšana no jumta Rīgā, Mārupē, Jūrmalā, Ādažos, Siguldā, Pierīgā un visā Latvijā.',
+    lv: 'Jumiķa pakalpojumi, jumiķi, jumta darbi, jumta remonts, jumta labošana, jumta atjaunošana, jumta renovācija, jumta nomaiņa, jumta montāža, jumta būvniecība, jumta izbūve, jumta seguma nomaiņa, jumta seguma montāža, jumta uzstādīšana, jumta rekonstrukcija, jumta pārbūve, jumta maiņa, valcprofila jumts, metāla jumts, skārda jumts, dakstiņu jumts un jumta loksnes Rīgā, Mārupē, Jūrmalā, Ādažos, Siguldā, Pierīgā un visā Latvijā.',
     en: 'Our core focus is roofing services, roof repair, roof renovation, roof installation, standing seam roofing, gutter installation, snow removal and roof maintenance in Riga and throughout Latvia.',
     'nl-BE': 'Onze kernfocus ligt op dakdiensten, dakreparatie, dakrenovatie, dakinstallatie, staande naad, gootsystemen, sneeuwruiming en dakonderhoud in Letland.',
   };
+
+  const seoPhrasesLv = [
+    'Valcprofila montāža',
+    'Jumta renovācija',
+    'Jumta nomaiņa',
+    'Jumta montāža',
+    'Jumta būvniecība',
+    'Jumiķa pakalpojumi',
+    'Jumiķi',
+    'Jumta darbi',
+    'Jumta atjaunošana',
+    'Jumta remonts',
+    'Jumta labošana',
+    'Jauns jumts',
+    'Jumta izbūve',
+    'Jumta seguma nomaiņa',
+    'Jumta seguma montāža',
+    'Jumta uzstādīšana',
+    'Jumta rekonstrukcija',
+    'Jumta pārbūve',
+    'Jumta maiņa',
+    'Valcprofila jumts',
+    'Metāla jumts',
+    'Skārda jumts',
+    'Dakstiņu jumts',
+    'Jumta loksnes',
+    'Jumiķi Rīgā',
+    'Jumta remonts Rīgā',
+    'Jumta nomaiņa Rīgā',
+    'Jumta montāža Rīgā',
+    'Jumiķi Mārupē',
+    'Jumiķi Jūrmalā',
+    'Jumiķi Ādažos',
+    'Jumiķi Siguldā',
+  ];
 
   const statsData: Record<string, {value: string; label: string}[]> = {
     lv: [
@@ -102,20 +130,23 @@ export default async function HomePage({params}: Props) {
     <main className="min-h-screen">
   <Header showText={false} largeLogo={true} />
   <Hero />
-      <div className="bg-gray-900 text-white py-3">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-center">
-            <p className="font-semibold text-sm sm:text-base">{banner.title}</p>
-            <a href={`/${locale}/services/jumta-apkope-remonts`} className="inline-flex items-center gap-2 bg-white text-gray-900 px-5 py-2 rounded-lg font-semibold text-sm hover:bg-gray-100 transition-colors">
-              {banner.cta}
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-            </a>
-          </div>
-        </div>
-        <div className="bg-white border-b border-gray-200">
+        <div className="sr-only bg-white border-b border-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-center">
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed max-w-4xl mx-auto">
               {seoIntro[locale] || seoIntro.lv}
             </p>
+            {locale === 'lv' && (
+              <div className="mt-5 rounded-2xl border border-gray-200 bg-gray-50 px-4 py-4 text-left">
+                <h2 className="text-sm font-semibold uppercase tracking-wider text-gray-600 mb-3">Populāri meklējumi</h2>
+                <div className="flex flex-wrap gap-2 text-sm text-gray-700">
+                  {seoPhrasesLv.map((phrase) => (
+                    <span key={phrase} className="rounded-full border border-gray-200 bg-white px-3 py-1.5 shadow-sm">
+                      {phrase}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
   <Services limit={4} />

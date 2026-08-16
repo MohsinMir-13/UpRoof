@@ -1,15 +1,23 @@
 'use client';
 
-import {useTranslations} from 'next-intl';
+import {useLocale, useTranslations} from 'next-intl';
 import {motion} from 'framer-motion';
 import {useEffect, useRef, useState} from 'react';
 import {Link} from '@/i18n/routing';
 import Image from 'next/image';
 
 export default function Hero() {
+  const locale = useLocale();
   const t = useTranslations('home.hero');
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoReady, setIsVideoReady] = useState(false);
+
+  const bannerText: Record<string, {title: string; cta: string}> = {
+    lv: {title: 'Jumta būvniecība, jumta renovācija, jumta remonts un jumta apkope — bezmaksas diagnostika', cta: 'Pieteikt apskati'},
+    en: {title: 'Roof repair, roof renovation, standing seam roofing and snow removal — free roof diagnostics', cta: 'Book inspection'},
+    'nl-BE': {title: 'Dakreparatie, dakrenovatie, staande naad en sneeuwruiming — gratis dakdiagnose', cta: 'Plan inspectie'},
+  };
+  const banner = bannerText[locale] || bannerText.lv;
 
   useEffect(() => {
     const video = videoRef.current;
@@ -90,6 +98,18 @@ export default function Hero() {
               rgba(248,250,252,0.0) 100%)`
           }}
         />
+
+        <div className="absolute left-0 right-0 bottom-24 sm:bottom-28 md:bottom-32 z-30 px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto flex max-w-7xl flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 rounded-2xl border border-white/15 bg-gray-900/70 px-4 py-3 text-center text-white shadow-2xl shadow-black/20 backdrop-blur-md">
+            <p className="font-semibold text-sm sm:text-base">{banner.title}</p>
+            <Link href={`/${locale}/services/jumta-apkope-remonts`} className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-semibold text-gray-900 transition-colors hover:bg-gray-100">
+              {banner.cta}
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+        </div>
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 md:py-32 text-center">

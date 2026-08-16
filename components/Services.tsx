@@ -113,7 +113,7 @@ export default function Services({ limit }: ServicesProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-6 sm:mb-8 px-2"
+          className="sr-only text-center mb-6 sm:mb-8 px-2"
         >
           <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-primary-700 mb-3">
             {strapline}

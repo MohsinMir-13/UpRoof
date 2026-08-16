@@ -62,12 +62,12 @@ export async function generateMetadata({params}: {params: Promise<{locale: Local
     ? `https://uproof.eu/nl-BE/cities/${city}`
     : `https://uproof.eu/lv/cities/${city}`;
   const titleMap: Record<string,string> = {
-    lv: `Jumta pakalpojumi ${name} | Būvniecība, remonts, apkope | UpRoof`,
+    lv: `Jumiķi ${name} | Jumta remonts, jumta nomaiņa un jumta montāža ${name} | UpRoof`,
     en: `Roofing Services in ${name} | Construction, Repair & Maintenance | UpRoof`,
     'nl-BE': `Dakdekker in ${name} | Dakwerken, dakbedekking & herstellingen | UpRoof`
   };
   const descMap: Record<string,string> = {
-    lv: `Profesionāli jumta pakalpojumi ${name} ${countryLabel}: jumta būvniecība, jumta renovācija, jumta remonts, valcprofils, noteksistēmas un jumta logi. 10 gadu garantija. Bezmaksas novērtējums.`,
+    lv: `Profesionāli jumta pakalpojumi ${name} ${countryLabel}: jumiķi ${name}, jumta remonts ${name}, jumta nomaiņa ${name}, jumta montāža ${name}, jumta atjaunošana, jumta labošana, jumta renovācija, jumta būvniecība, valcprofils, metāla jumts, skārda jumts un dakstiņu jumts. 10 gadu garantija. Bezmaksas novērtējums.`,
     en: `Professional roofing services in ${name} ${countryLabel}: roof construction, roof renovation, roof repair, standing seam, gutters and skylights. 10-year warranty. Free assessment.`,
     'nl-BE': `Professionele dakwerken in ${name} ${countryLabel}: dakbedekking, dakrenovatie, dakreparatie, lekdetectie, staande naad, bitumen, PVC, TPO, goten en dakramen. 10 jaar garantie. Gratis evaluatie.`
   };
@@ -131,6 +131,11 @@ export default async function CityLanding({params}: {params: Promise<{locale: Lo
                   <li key={s} className="flex items-start"><span className="text-primary-600 mr-2">•</span><span>{s}</span></li>
                 ))}
               </ul>
+              {locale === 'lv' && (
+                <p className="sr-only mt-4 text-sm text-gray-600 leading-relaxed">
+                  Jumiķi Rīgā, jumta remonts Rīgā, jumta nomaiņa Rīgā, jumta montāža Rīgā, jumiķi Mārupē, jumiķi Jūrmalā, jumiķi Ādažos un jumiķi Siguldā ir meklēšanas frāzes, kuras mēs apzināti atbalstām ar atsevišķām pilsētu lapām un redzamu SEO saturu.
+                </p>
+              )}
               {locale === 'nl-BE' && (
                 <p className="mt-4 text-sm text-gray-600 leading-relaxed">
                   Populaire zoekopdrachten in deze regio: dakdekker, dakwerken, dakbedekking, dakherstelling, lek in dak, bitumen dakbedekking, PVC dakmembraan en TPO dakmembraan.

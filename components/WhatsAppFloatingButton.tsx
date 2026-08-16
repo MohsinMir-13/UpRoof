@@ -1,44 +1,140 @@
-import Link from 'next/link';
+"use client";
+
+import {useEffect, useRef, useState} from 'react';
 
 const WHATSAPP_URL = 'https://api.whatsapp.com/send?phone=37125612440&text=Sveiki%21%20K%C4%81%20varu%20pal%C4%ABdz%C4%93t%3F%20Rakstu%20par%20jumta%20pakalpojumiem.';
 
 export default function WhatsAppFloatingButton() {
+  const dragState = useRef({
+    pointerId: -1,
+    startX: 0,
+    startY: 0,
+    originX: 0,
+    originY: 0,
+    moved: false,
+    dragging: false,
+  });
+  const [position, setPosition] = useState({x: 0, y: 0});
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const saved = window.localStorage.getItem('whatsapp-floating-button-position');
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved) as {x?: number; y?: number};
+        if (typeof parsed.x === 'number' && typeof parsed.y === 'number') {
+          setPosition({x: parsed.x, y: parsed.y});
+          setReady(true);
+          return;
+        }
+      } catch {
+        // Ignore invalid saved position.
+      }
+    }
+
+    const size = 56;
+    setPosition({
+      x: window.innerWidth - size - 20,
+      y: window.innerHeight - size - 20,
+    });
+    setReady(true);
+  }, []);
+
+  useEffect(() => {
+    if (!ready) return;
+    window.localStorage.setItem('whatsapp-floating-button-position', JSON.stringify(position));
+  }, [position, ready]);
+
+  useEffect(() => {
+    const handlePointerMove = (event: PointerEvent) => {
+      if (dragState.current.pointerId !== event.pointerId || !dragState.current.dragging) return;
+
+      const deltaX = event.clientX - dragState.current.startX;
+      const deltaY = event.clientY - dragState.current.startY;
+
+      if (!dragState.current.moved && Math.hypot(deltaX, deltaY) > 4) {
+        dragState.current.moved = true;
+      }
+
+      if (!dragState.current.moved) return;
+
+      const size = 56;
+      const nextX = clamp(dragState.current.originX + deltaX, 12, window.innerWidth - size - 12);
+      const nextY = clamp(dragState.current.originY + deltaY, 12, window.innerHeight - size - 12);
+      setPosition({x: nextX, y: nextY});
+    };
+
+    const handlePointerUp = (event: PointerEvent) => {
+      if (dragState.current.pointerId !== event.pointerId) return;
+      dragState.current.pointerId = -1;
+      dragState.current.dragging = false;
+    };
+
+    window.addEventListener('pointermove', handlePointerMove);
+    window.addEventListener('pointerup', handlePointerUp);
+    window.addEventListener('pointercancel', handlePointerUp);
+
+    return () => {
+      window.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('pointerup', handlePointerUp);
+      window.removeEventListener('pointercancel', handlePointerUp);
+    };
+  }, []);
+
+  const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max);
+
+  const onPointerDown = (event: React.PointerEvent<HTMLAnchorElement>) => {
+    if (event.button !== 0) return;
+    event.preventDefault();
+    dragState.current = {
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+      originX: position.x,
+      originY: position.y,
+      moved: false,
+      dragging: true,
+    };
+  };
+
+  const onClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (dragState.current.moved) {
+      event.preventDefault();
+      dragState.current.moved = false;
+    }
+  };
+
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
-      <Link
-        href={WHATSAPP_URL}
-        target="_blank"
-        rel="noopener noreferrer nofollow"
-        aria-label="Rakstiet mums ziņu WhatsApp"
-        className="group max-w-[18rem] overflow-hidden rounded-3xl border border-green-200 bg-white shadow-2xl shadow-green-500/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-green-500/30 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 focus:ring-offset-white"
+    <a
+      href={WHATSAPP_URL}
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+      aria-label="Rakstiet mums ziņu WhatsApp"
+      title="WhatsApp"
+      onPointerDown={onPointerDown}
+      onClick={onClick}
+      className="fixed z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-2xl shadow-green-500/30 transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 focus:ring-offset-white"
+      style={{
+        left: position.x,
+        top: position.y,
+        touchAction: 'none',
+        cursor: dragState.current.dragging ? 'grabbing' : 'grab',
+        userSelect: 'none',
+        WebkitUserSelect: 'none',
+        visibility: ready ? 'visible' : 'hidden',
+      }}
+    >
+      <span className="absolute inset-0 rounded-full bg-white/10" aria-hidden="true" />
+      <svg
+        className="relative h-7 w-7"
+        viewBox="0 0 32 32"
+        fill="currentColor"
+        aria-hidden="true"
       >
-        <div className="bg-gradient-to-br from-[#25D366] to-[#128C7E] px-4 py-3 text-white">
-          <div className="flex items-start gap-3">
-            <span className="relative mt-1 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-white/15">
-              <span className="absolute inset-0 animate-ping rounded-full bg-white/20 opacity-30" />
-              <svg
-                className="relative h-5 w-5"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path d="M20.52 3.48A11.81 11.81 0 0 0 12.09 0C5.51 0 .16 5.34.16 11.92c0 2.1.55 4.14 1.58 5.93L0 24l6.33-1.66a11.88 11.88 0 0 0 5.76 1.48h.01c6.58 0 11.92-5.34 11.92-11.92 0-3.19-1.24-6.19-3.5-8.42Zm-8.43 18.32h-.01a9.9 9.9 0 0 1-5.05-1.39l-.36-.21-3.75.98 1-3.66-.24-.38a9.88 9.88 0 0 1-1.51-5.2c0-5.46 4.45-9.9 9.92-9.9 2.65 0 5.14 1.03 7.01 2.9a9.85 9.85 0 0 1 2.91 7.01c0 5.47-4.45 9.85-9.92 9.85Zm5.76-7.86c-.32-.16-1.89-.93-2.18-1.03-.29-.11-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.18.21-.37.24-.69.08-.32-.16-1.34-.5-2.55-1.61-.94-.84-1.57-1.87-1.75-2.19-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.55.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.55-.08-.16-.71-1.71-.98-2.35-.26-.63-.53-.54-.71-.55-.18 0-.39-.01-.61-.01-.21 0-.55.08-.84.4-.29.32-1.1 1.07-1.1 2.61s1.13 3.03 1.28 3.24c.16.21 2.2 3.36 5.35 4.71.75.32 1.33.51 1.78.65.75.24 1.43.2 1.97.12.6-.09 1.89-.77 2.16-1.51.26-.74.26-1.37.18-1.51-.08-.14-.29-.21-.61-.37Z" />
-              </svg>
-            </span>
-            <div className="text-left">
-               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/80">Chat</p>
-              <p className="mt-1 whitespace-nowrap text-[13px] font-semibold leading-none">Sveiki! Kā varam jums palīdzēt?</p>
-               <p className="mt-1 text-xs leading-snug text-white/90">Rakstiet mums ziņu, un mēs atbildēsim pēc iespējas ātrāk.</p>
-            </div>
-          </div>
-        </div>
-        <div className="flex items-center justify-between gap-3 bg-white px-4 py-3">
-          <span className="text-xs font-medium text-gray-600">Sazinieties ar mums</span>
-          <span className="inline-flex items-center gap-1 rounded-full bg-[#25D366] px-3 py-1 text-xs font-semibold text-white transition-transform duration-300 group-hover:scale-105">
-            Sūtīt ziņu
-          </span>
-        </div>
-      </Link>
-    </div>
+        <path d="M19.11 17.23c-.28-.14-1.64-.81-1.89-.91-.25-.09-.43-.14-.61.14-.18.28-.69.91-.85 1.1-.16.19-.32.21-.6.07-.28-.14-1.2-.44-2.29-1.4-.85-.76-1.42-1.7-1.58-1.98-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.19-.28.28-.46.09-.18.05-.34-.03-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.48.07-.73.35-.25.28-.95.99-.95 2.41 0 1.42.98 2.8 1.12 2.99.14.19 2.02 3.08 4.9 4.32.68.29 1.21.47 1.62.6.68.22 1.3.19 1.79.11.55-.08 1.64-.67 1.87-1.32.23-.65.23-1.2.16-1.32-.07-.11-.25-.18-.53-.32z" />
+        <path d="M26.67 5.33A14.49 14.49 0 0 0 16 1.33C8.65 1.33 2.67 7.31 2.67 14.67c0 2.35.62 4.64 1.78 6.63L2.67 30.67l9.54-2.5a14.63 14.63 0 0 0 6.46 1.5H18.7c7.35 0 13.33-5.98 13.33-13.33 0-3.56-1.39-6.9-3.86-9.48zm-10.67 23.34h-.01a11.58 11.58 0 0 1-5.92-1.63l-.42-.24-4.39 1.15 1.17-4.29-.28-.44a11.56 11.56 0 0 1-1.77-6.08c0-6.39 5.2-11.59 11.6-11.59 3.1 0 6.03 1.21 8.21 3.4a11.52 11.52 0 0 1 3.4 8.2c0 6.4-5.2 11.52-11.6 11.52z" />
+      </svg>
+      <span className="sr-only">Rakstiet mums ziņu WhatsApp</span>
+    </a>
   );
 }
