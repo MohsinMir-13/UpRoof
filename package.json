@@ -18,13 +18,13 @@
     "csrf": "^3.1.0",
     "date-fns": "^4.1.0",
     "framer-motion": "^11.5.0",
-    "next": "^16.3.0",
+    "next": "^15.5.21",
     "next-intl": "^4.11.2",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
     "react-hook-form": "^7.76.1",
     "sanitize-html": "^2.17.5",
-    "sharp": "^0.35.0",
+    "sharp": "^0.35.3",
     "three": "^0.180.0",
     "uuid": "^13.0.0",
     "vanta": "^0.5.24"
@@ -40,7 +40,7 @@
     "baseline-browser-mapping": "^2.9.19",
     "eslint": "^9.0.0",
     "eslint-config-next": "^15.5.10",
-    "postcss": "^8.5.14",
+    "postcss": "^8.5.18",
     "tailwindcss": "^3.4.0",
     "typescript": "^5.5.0"
   },
@@ -53,6 +53,7 @@
     "not ie 11"
   ],
   "overrides": {
-    "postcss": "^8.5.14"
+    "postcss": "^8.5.18",
+    "sharp": "^0.35.3"
   }
 }

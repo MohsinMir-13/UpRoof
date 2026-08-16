@@ -16,15 +16,42 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 
   const titles: Record<string, string> = {
-    lv: 'Jumta būvniecība, jumta renovācija, jumta remonts un jumta apkope Latvijā | UpRoof',
+    lv: 'Jumiķa pakalpojumi, jumta darbi, jumta būvniecība, jumta renovācija un jumta remonts Latvijā | UpRoof',
     en: 'Roof Construction, Roof Renovation, Roof Repair & Roofing Services in Latvia | UpRoof',
     'nl-BE': 'Dakbouw, dakrenovatie, dakreparatie en dakdiensten in Letland | UpRoof',
   };
   const descriptions: Record<string, string> = {
-    lv: 'Profesionāli jumta pakalpojumi Rīgā, Pierīgā un visā Latvijā: jumta būvniecība, jumta renovācija, jumta remonts, valcprofila jumts, dakstiņu jumts, noteku montāža, sniega tīrīšana no jumta un jumta apkope.',
+    lv: 'Profesionāli jumta pakalpojumi Rīgā, Pierīgā un visā Latvijā: jumiķi, jumiķa pakalpojumi, jumta darbi, jumta būvniecība, jumta renovācija, jumta remonts, jumta nomaiņa, jumta montāža, jumta atjaunošana, jumta labošana, valcprofila jumts, metāla jumts, skārda jumts, dakstiņu jumts un jumta loksnes.',
     en: 'A full range of professional roofing services across Riga and Latvia: roof construction, roof renovation, roof repair, standing seam roofing, tile roofs, gutter installation, snow removal and roof maintenance.',
     'nl-BE': 'Volledig scala aan professionele dakdiensten in heel Letland: dakbouw, dakrenovatie, dakreparatie, staande naad, pannendaken, gootinstallatie, sneeuwruiming en dakonderhoud.',
   };
+
+  const seoPhrasesLv = [
+    'Valcprofila montāža',
+    'Jumta renovācija',
+    'Jumta nomaiņa',
+    'Jumta montāža',
+    'Jumta būvniecība',
+    'Jumiķa pakalpojumi',
+    'Jumiķi',
+    'Jumta darbi',
+    'Jumta atjaunošana',
+    'Jumta remonts',
+    'Jumta labošana',
+    'Jauns jumts',
+    'Jumta izbūve',
+    'Jumta seguma nomaiņa',
+    'Jumta seguma montāža',
+    'Jumta uzstādīšana',
+    'Jumta rekonstrukcija',
+    'Jumta pārbūve',
+    'Jumta maiņa',
+    'Valcprofila jumts',
+    'Metāla jumts',
+    'Skārda jumts',
+    'Dakstiņu jumts',
+    'Jumta loksnes',
+  ];
 
   return {
     title: titles[locale] || titles.lv,
@@ -302,6 +329,23 @@ export default async function ServicesPage({params}: {params: Promise<{locale: s
           }}
         />
       </section>
+      {locale === 'lv' && (
+        <section className="sr-only border-b border-gray-200 bg-white py-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-lg font-semibold text-gray-900 mb-3">Populāras jumtu meklēšanas frāzes</h2>
+            <p className="text-sm text-gray-700 leading-relaxed mb-4">
+              Jumiķa pakalpojumi, jumiķi, jumta darbi, jumta remonts, jumta labošana, jumta atjaunošana, jumta renovācija, jumta nomaiņa, jumta montāža, jumta būvniecība, jumta izbūve, jumta seguma nomaiņa, jumta seguma montāža, jumta uzstādīšana, jumta rekonstrukcija, jumta pārbūve, jumta maiņa.
+            </p>
+            <div className="flex flex-wrap gap-2 text-sm text-gray-700">
+              {seoPhrasesLv.map((phrase) => (
+                <span key={phrase} className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5">
+                  {phrase}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
       <Services />
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumbSchema)}} />
