@@ -13,11 +13,17 @@ export default function Hero() {
   const [isVideoReady, setIsVideoReady] = useState(false);
 
   const bannerText: Record<string, {title: string; cta: string}> = {
-    lv: {title: 'Jumta būvniecība, jumta renovācija, jumta remonts un jumta apkope — bezmaksas diagnostika', cta: 'Pieteikt apskati'},
-    en: {title: 'Roof repair, roof renovation, standing seam roofing and snow removal — free roof diagnostics', cta: 'Book inspection'},
-    'nl-BE': {title: 'Dakreparatie, dakrenovatie, staande naad en sneeuwruiming — gratis dakdiagnose', cta: 'Plan inspectie'},
+    lv: {title: 'Roof construction, roof renovation, roof repair and roof maintenance - free diagnostics', cta: 'Request a viewing'},
+    en: {title: 'Roof construction, roof renovation, roof repair and roof maintenance - free diagnostics', cta: 'Request a viewing'},
+    'nl-BE': {title: 'Roof construction, roof renovation, roof repair and roof maintenance - free diagnostics', cta: 'Request a viewing'},
   };
   const banner = bannerText[locale] || bannerText.lv;
+  const emergencyText: Record<string, {title: string; cta: string}> = {
+    lv: {title: 'Vētra sabojāja jumtu?', cta: 'Steidzams remonts 24/7'},
+    en: {title: 'Storm damaged your roof?', cta: 'Emergency repair 24/7'},
+    'nl-BE': {title: 'Stormschade aan uw dak?', cta: 'Spoedherstel 24/7'},
+  };
+  const emergency = emergencyText[locale] || emergencyText.lv;
 
   useEffect(() => {
     const video = videoRef.current;
@@ -99,17 +105,6 @@ export default function Hero() {
           }}
         />
 
-        <div className="absolute left-0 right-0 bottom-24 sm:bottom-28 md:bottom-32 z-30 px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto flex max-w-7xl flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 rounded-2xl border border-white/15 bg-gray-900/70 px-4 py-3 text-center text-white shadow-2xl shadow-black/20 backdrop-blur-md">
-            <p className="font-semibold text-sm sm:text-base">{banner.title}</p>
-            <Link href={`/${locale}/services/jumta-apkope-remonts`} className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-semibold text-gray-900 transition-colors hover:bg-gray-100">
-              {banner.cta}
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
-        </div>
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 md:py-32 text-center">
@@ -158,7 +153,26 @@ export default function Hero() {
               {t('learnMore')}
             </Link>
           </motion.div>
+
         </motion.div>
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 z-40 w-full">
+        <div className="flex w-full flex-col items-center justify-center gap-3 border-y border-white/20 bg-gray-900/90 px-4 py-3 text-center text-white shadow-2xl backdrop-blur-md sm:flex-row sm:gap-6 sm:px-6 lg:px-8">
+          <p className="max-w-3xl font-semibold text-sm leading-relaxed sm:text-base">{banner.title}</p>
+          <a href="https://uproof.eu/lv/services/jumta-apkope-remonts" className="inline-flex shrink-0 items-center gap-2 bg-white px-4 py-2 text-sm font-semibold text-gray-900 transition-colors hover:bg-gray-100">
+            {banner.cta}
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+        <div className="flex w-full flex-col items-center justify-center gap-2 border-b border-red-200 bg-red-50 px-4 py-3 text-center text-red-900 sm:flex-row sm:gap-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-bold sm:text-base">{emergency.title}</p>
+          <a href="https://uproof.eu/lv/urgency/vetras-jumta-bojajumi" className="inline-flex shrink-0 items-center bg-red-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-red-800">
+            {emergency.cta}
+          </a>
+        </div>
       </div>
     </section>
   );

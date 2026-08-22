@@ -176,7 +176,7 @@ const META: Record<string, {title: Record<string, string>; description: Record<s
     },
     description: {
       lv: 'Jumts tek vai noplūst? UpRoof nodrošina 24/7 avārijas palīdzību Rīgā un Pierīgā: diagnostiku, lokālu remontu un noplūžu novēršanu. Sertificēti meistari, 2 gadu garantija un bezmaksas novērtējums.',
-      en: 'Roof leak emergency? Fast 24/7 response, diagnostics, local repair in Riga and Pieriga. Certified specialists, 2-year warranty. Free assessment. Call +371 25612440',
+      en: 'Roof leak emergency? Fast 24/7 response, diagnostics, local repair in Riga and Pieriga. Certified specialists, 2-year warranty. Free assessment. Call +371 26207300',
       'nl-BE': 'Daklek noodgeval? Snelle 24/7 reactie, diagnose, lokale reparatie in België. Gecertificeerde vakmensen, 2 jaar garantie. Gratis beoordeling.'
     },
     keywords: 'jumta remonts Rīgā, jumta remonta pakalpojumi, jumta darbi Rīgā, jumts tek, jumta noplūde avārija, avārijas reaģēšana, jumta remonts Pierīgā, emergency roof repair Riga, dak reparatie noodgeval België'
@@ -936,7 +936,7 @@ export default async function ServiceLanding({params}: PageProps) {
       '@type': 'RoofingContractor',
       name: 'UpRoof',
       url: 'https://uproof.eu',
-      telephone: '+371-25612440',
+      telephone: '+371-26207300',
       address: {
         '@type': 'PostalAddress',
         addressLocality: locale === 'nl-BE' ? 'Kortrijk' : 'Rīga',

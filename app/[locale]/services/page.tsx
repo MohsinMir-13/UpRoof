@@ -163,7 +163,7 @@ export default async function ServicesPage({params}: {params: Promise<{locale: s
       ? 'Profesionāli jumta pakalpojumi Rīgā un Latvijā: jumta būvniecība, jumta renovācija, jumta remonts, jumta apkope, noteksistēmas un sniega tīrīšana'
       : 'Professional roofing services in Riga, Latvia: construction, renovation, repair, metal roofing, snow removal',
     priceRange: '€€',
-    telephone: '+371-25612440',
+    telephone: '+371-26207300',
     email: 'contact@uproof.eu',
     address: {
       '@type': 'PostalAddress',

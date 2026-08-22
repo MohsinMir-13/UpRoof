@@ -3,7 +3,7 @@ url: https://uproof.eu
 company: SIA UpLift
 languages: lv,en,nl-BE
 contact_email: contact@uproof.eu
-contact_phone: +37125612440
+contact_phone: +37126207300
 
 about:
 	UpRoof is a professional roofing contractor based in Latvia.
@@ -48,7 +48,7 @@ local_search_intents:
 key_facts:
 	service_area: Riga, Pierīga, Jūrmala, Jelgava, Ogre, Salaspils, Ķekava, Mārupē, Ādaži, Sigulda, and Latvia more broadly
 	warranty: 10-year warranty on core works
-	contact: +371 25612440
+	contact: +371 26207300
 	email: contact@uproof.eu
 	company: SIA UpLift
 	site_name: UpRoof

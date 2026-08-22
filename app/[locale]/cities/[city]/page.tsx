@@ -197,7 +197,7 @@ export default async function CityLanding({params}: {params: Promise<{locale: Lo
           <div className="bg-primary-600/10 border-l-4 border-primary-600 p-6 rounded-md mb-10">
             <p className="font-semibold text-primary-800">
               {locale === 'nl-BE' ? 'Gratis eerste evaluatie. Schrijf of bel: ' : locale === 'en' ? 'Free initial assessment. Write or call: ' : 'Bezmaksas sākotnējais novērtējums. Rakstiet vai zvaniet: '} 
-              <a href="tel:+37125612440" className="underline">+371 25612440</a>
+              <a href="tel:+37126207300" className="underline">+371 26207300</a>
             </p>
           </div>
         </div>
@@ -216,7 +216,7 @@ export default async function CityLanding({params}: {params: Promise<{locale: Lo
             areaServed: displayName,
             serviceArea: displayName,
             knowsAbout: content?.recommendedSystems || undefined,
-            telephone: '+37125612440',
+            telephone: '+37126207300',
             image: 'https://uproof.eu/images/og-image.jpg',
             description: (content?.hero?.subheading || `${displayName} roofing services by certified specialists.`)
           })
