@@ -17,9 +17,9 @@ const titles: Record<string, string> = {
 };
 
 const descriptions: Record<string, string> = {
-  lv: 'Saņemiet bezmaksas jumta novērtējumu Latvijā. Sazinieties ar UpRoof profesionāliem jumta pakalpojumiem. Tālrunis: +371 25612440. Ātra atbilde garantēta.',
-  en: 'Get a free roofing quote in Latvia. Contact UpRoof for professional roofing services. Phone: +371 25612440. Fast response guaranteed.',
-  'nl-BE': 'Vraag een gratis dakofferte aan. Contacteer UpRoof voor professionele dakdiensten. Tel: +371 25612440. Snelle reactie gegarandeerd.',
+  lv: 'Saņemiet bezmaksas jumta novērtējumu Latvijā. Sazinieties ar UpRoof profesionāliem jumta pakalpojumiem. Tālrunis: +371 26207300. Ātra atbilde garantēta.',
+  en: 'Get a free roofing quote in Latvia. Contact UpRoof for professional roofing services. Phone: +371 26207300. Fast response guaranteed.',
+  'nl-BE': 'Vraag een gratis dakofferte aan. Contacteer UpRoof voor professionele dakdiensten. Tel: +371 26207300. Snelle reactie gegarandeerd.',
 };
 
 export async function generateMetadata({params}: Props): Promise<Metadata> {

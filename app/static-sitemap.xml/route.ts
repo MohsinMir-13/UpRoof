@@ -27,6 +27,8 @@ export async function GET() {
           const priority =
             p === ''
               ? 1
+              : p === '/urgency/vetras-jumta-bojajumi'
+                ? 1
               : p === '/services/seasonal'
                 ? 0.95
                 : p.startsWith('/urgency/')

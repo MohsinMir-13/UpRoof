@@ -147,7 +147,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'UpRoof – Profesionālie jumta pakalpojumi Latvijā | 24/7',
-    description: 'Jumta remonts, būvniecība, metāla jumta montāža un sniega tīrīšana. 10 gadu garantija. +371 25612440',
+    description: 'Jumta remonts, būvniecība, metāla jumta montāža un sniega tīrīšana. 10 gadu garantija. +371 26207300',
     images: ['/images/og-image.jpg'],
   },
   robots: {
@@ -225,7 +225,7 @@ export default async function LocaleLayout({
       postalCode: 'LV-1000',
       addressCountry: 'LV'
     },
-    telephone: '+371-25612440',
+    telephone: '+371-26207300',
     priceRange: '$$',
     // Multiple service areas covering Riga and surrounding regions
     areaServed: [

@@ -16,8 +16,8 @@ const titles: Record<string, string> = {
 
 const descriptions: Record<string, string> = {
 	lv: 'Steidzama jumta noplūdes situācija: soli pa solim darbības, pagaidu risinājumi, profesionāla palīdzība un izmaksu faktori.',
-	en: 'Emergency roof leak: step-by-step actions, temporary fixes, professional help and cost factors. Call +371 25612440.',
-	'nl-BE': 'Noodgeval daklek: stap-voor-stap actie, tijdelijke oplossingen, professionele hulp en kostenfactoren. Bel +371 25612440.',
+	en: 'Emergency roof leak: step-by-step actions, temporary fixes, professional help and cost factors. Call +371 26207300.',
+	'nl-BE': 'Noodgeval daklek: stap-voor-stap actie, tijdelijke oplossingen, professionele hulp en kostenfactoren. Bel +371 26207300.',
 };
 
 export async function generateMetadata({params}: Props): Promise<Metadata> {
@@ -121,7 +121,7 @@ export default async function UrgencyLeakPage({ params }: Props) {
 						<div className="bg-white p-6 rounded-lg shadow">
 							<h2 className="text-2xl font-semibold mb-3">{locale === 'lv' ? 'Sazinies ar UpRoof' : locale === 'en' ? 'Contact UpRoof' : 'Neem contact op met UpRoof'}</h2>
 							<p className="text-sm mb-2">{locale === 'lv' ? 'Bezmaksas sākotnējais novērtējums un skaidrs remonta plāns.' : locale === 'en' ? 'Free initial assessment and a clear repair plan.' : 'Gratis eerste beoordeling en een helder herstelplan.'}</p>
-							<p className="text-sm">{locale === 'lv' ? 'Zvani ' : locale === 'en' ? 'Call ' : 'Bel '}<a href="tel:+37125612440" className="underline">+371 25612440</a> {locale === 'lv' ? 'vai raksti' : locale === 'en' ? 'or write' : 'of schrijf'} <a href="mailto:contact@uproof.eu" className="underline">contact@uproof.eu</a></p>
+							<p className="text-sm">{locale === 'lv' ? 'Zvani ' : locale === 'en' ? 'Call ' : 'Bel '}<a href="tel:+37126207300" className="underline">+371 26207300</a> {locale === 'lv' ? 'vai raksti' : locale === 'en' ? 'or write' : 'of schrijf'} <a href="mailto:contact@uproof.eu" className="underline">contact@uproof.eu</a></p>
 						</div>
 					</div>
 				</div>

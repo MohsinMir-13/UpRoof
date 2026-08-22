@@ -40,15 +40,15 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
   };
 
   const titles: Record<string, string> = {
-    lv: 'UpRoof | Jumiķa pakalpojumi, jumta darbi, jumta remonts un jumta būvniecība Latvijā',
-    en: 'Roof Repair, Roof Renovation & Roofing Services in Latvia | UpRoof',
-    'nl-BE': 'Dakreparatie, dakrenovatie en dakdiensten in Letland | UpRoof',
+    lv: 'Avārijas jumta remonts pēc vētras 24/7 | UpRoof',
+    en: 'Emergency Storm Roof Repair 24/7 in Riga | UpRoof',
+    'nl-BE': 'Dakschade na storm: spoedherstel 24/7 | UpRoof',
   };
 
   const descriptions: Record<string, string> = {
-    lv: 'Profesionāli jumta pakalpojumi Rīgā, Pierīgā un visā Latvijā: jumiķi, jumiķa pakalpojumi, jumta darbi, jumta renovācija, jumta remonts, jumta nomaiņa, jumta montāža, jumta atjaunošana, jumta labošana, jumta būvniecība, valcprofila jumts, metāla jumts, skārda jumts, dakstiņu jumts un jumta loksnes ar garantiju.',
-    en: 'Professional roofing services in Riga and throughout Latvia: roof construction, roof renovation, roof repair, standing seam roofing, tile roofs, gutters, snow removal and maintenance with warranty.',
-    'nl-BE': 'Professionele dakdiensten in Letland: dakbouw, dakrenovatie, dakreparatie, staande naad, pannendaken, goten, sneeuwruiming en onderhoud met garantie.',
+    lv: 'Steidzams jumta remonts pēc vētras vai stipra vēja Rīgā un Pierīgā. Noplūžu apturēšana, pagaidu pārsegums un diagnostika 24/7, kā arī pilni jumta pakalpojumi ar garantiju.',
+    en: 'Emergency storm roof repair in Riga and nearby areas. Leak stopping, temporary cover and diagnostics 24/7, plus complete roofing services with warranty.',
+    'nl-BE': 'Spoedherstel van stormschade aan daken in Riga en omgeving. Lekstop, tijdelijke afdekking en diagnose 24/7, plus volledige dakdiensten met garantie.',
   };
 
   return {
@@ -170,7 +170,7 @@ export default async function HomePage({params}: Props) {
             name: 'UpRoof',
             url: `https://uproof.eu/${locale}`,
             image: 'https://uproof.eu/images/og-image.jpg',
-            telephone: '+37125612440',
+            telephone: '+37126207300',
             priceRange: '€€',
             address: {
               '@type': 'PostalAddress',
@@ -191,6 +191,7 @@ export default async function HomePage({params}: Props) {
               '@type': 'OfferCatalog',
               name: locale === 'lv' ? 'Jumta pakalpojumi' : locale === 'nl-BE' ? 'Dakdiensten' : 'Roofing Services',
               itemListElement: [
+                {'@type': 'Service', name: locale === 'lv' ? 'Steidzams jumta remonts pēc vētras' : locale === 'nl-BE' ? 'Spoedherstel na stormschade' : 'Emergency storm roof repair'},
                 {'@type': 'Service', name: locale === 'lv' ? 'Jumta renovācija' : locale === 'nl-BE' ? 'Dakrenovatie' : 'Roof Renovation'},
                 {'@type': 'Service', name: locale === 'lv' ? 'Jumta būvniecība' : locale === 'nl-BE' ? 'Dakbouw' : 'Roof Construction'},
                 {'@type': 'Service', name: locale === 'lv' ? 'Jumta remonts' : locale === 'nl-BE' ? 'Dakreparatie' : 'Roof Repair'},

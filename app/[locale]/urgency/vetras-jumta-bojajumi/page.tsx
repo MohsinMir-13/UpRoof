@@ -15,9 +15,9 @@ const titles: Record<string, string> = {
 };
 
 const descriptions: Record<string, string> = {
-	lv: 'Steidzams jumta remonts pēc vētras vai stipra vēja Rīgā un Pierīgā. Noplūžu apturēšana, pagaidu pārsegums, diagnostika un pilns remonta plāns. Zvaniet +371 25612440.',
-	en: 'Emergency roof repair after storm or strong wind in Riga and nearby areas. Leak stop, temporary cover, diagnostics and full repair plan. Call +371 25612440.',
-	'nl-BE': 'Dringend dakherstel na storm of harde wind in Riga en omgeving. Lekstop, tijdelijke afdekking, diagnose en volledig herstelplan. Bel +371 25612440.',
+	lv: 'Steidzams jumta remonts pēc vētras vai stipra vēja Rīgā un Pierīgā. Noplūžu apturēšana, pagaidu pārsegums, diagnostika un pilns remonta plāns. Zvaniet +371 26207300.',
+	en: 'Emergency roof repair after storm or strong wind in Riga and nearby areas. Leak stop, temporary cover, diagnostics and full repair plan. Call +371 26207300.',
+	'nl-BE': 'Dringend dakherstel na storm of harde wind in Riga en omgeving. Lekstop, tijdelijke afdekking, diagnose en volledig herstelplan. Bel +371 26207300.',
 };
 
 const ogLocales: Record<string, string> = {
@@ -190,7 +190,7 @@ export default async function VetrasJumtaBojajumiPage({params}: Props) {
 			'@type': 'LocalBusiness',
 			'@id': 'https://uproof.eu/#organization',
 			name: 'UpRoof (SIA UpLift)',
-			telephone: '+37125612440',
+			telephone: '+37126207300',
 			email: 'contact@uproof.eu',
 			url: 'https://uproof.eu',
 			address: {
@@ -204,7 +204,7 @@ export default async function VetrasJumtaBojajumiPage({params}: Props) {
 			'@type': 'ServiceChannel',
 			servicePhone: {
 				'@type': 'ContactPoint',
-				telephone: '+37125612440',
+				telephone: '+37126207300',
 				contactType: 'customer service',
 				availableLanguage: ['lv', 'en', 'ru'],
 			},
@@ -228,8 +228,8 @@ export default async function VetrasJumtaBojajumiPage({params}: Props) {
 					</h1>
 					<p className="text-lg md:text-xl text-slate-300 max-w-3xl mb-8 leading-relaxed">{text.heroBody}</p>
 					<div className="flex flex-col sm:flex-row gap-4">
-						<a href="tel:+37125612440" className="inline-flex items-center justify-center gap-2 bg-white text-slate-900 font-bold px-8 py-4 rounded-xl hover:bg-slate-100 transition-colors text-lg">
-							+371 25612440
+						<a href="tel:+37126207300" className="inline-flex items-center justify-center gap-2 bg-white text-slate-900 font-bold px-8 py-4 rounded-xl hover:bg-slate-100 transition-colors text-lg">
+							+371 26207300
 						</a>
 						<Link href="/contact" className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-colors">
 							{text.secondaryCta}
@@ -363,7 +363,7 @@ export default async function VetrasJumtaBojajumiPage({params}: Props) {
 								: 'Wij stoppen actieve lekken, beveiligen je dak voor de volgende regen en leveren een duidelijk herstelplan.'}
 					</p>
 					<div className="flex flex-col sm:flex-row gap-4 justify-center">
-						<a href="tel:+37125612440" className="inline-flex items-center justify-center bg-white text-slate-900 font-bold px-8 py-4 rounded-xl hover:bg-slate-100 transition-colors">
+						<a href="tel:+37126207300" className="inline-flex items-center justify-center bg-white text-slate-900 font-bold px-8 py-4 rounded-xl hover:bg-slate-100 transition-colors">
 							{text.primaryCta}
 						</a>
 						<a href="mailto:contact@uproof.eu" className="inline-flex items-center justify-center border-2 border-white/30 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-colors">

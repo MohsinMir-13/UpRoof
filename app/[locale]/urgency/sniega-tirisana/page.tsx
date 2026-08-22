@@ -15,9 +15,9 @@ const titles: Record<string, string> = {
 };
 
 const descriptions: Record<string, string> = {
-	lv: 'Profesionāla sniega tīrīšana no jumta Rīgā un Pierīgā 24/7. Lāsteku tīrīšana, jumta tīrīšana no ledus un lāstekām, sniega izvešana. Soda nauda līdz 1400 EUR. Zvaniet +371 25612440.',
-	en: 'Professional snow removal from roofs in Riga and surrounding areas 24/7. Icicle removal, ice cleaning, snow hauling. Fines up to €1,400. Call +371 25612440.',
-	'nl-BE': 'Professionele sneeuwruiming van daken in Riga 24/7. IJspegels verwijderen, ijs en sneeuw opruimen. Boetes tot €1.400. Bel +371 25612440.',
+	lv: 'Profesionāla sniega tīrīšana no jumta Rīgā un Pierīgā 24/7. Lāsteku tīrīšana, jumta tīrīšana no ledus un lāstekām, sniega izvešana. Soda nauda līdz 1400 EUR. Zvaniet +371 26207300.',
+	en: 'Professional snow removal from roofs in Riga and surrounding areas 24/7. Icicle removal, ice cleaning, snow hauling. Fines up to €1,400. Call +371 26207300.',
+	'nl-BE': 'Professionele sneeuwruiming van daken in Riga 24/7. IJspegels verwijderen, ijs en sneeuw opruimen. Boetes tot €1.400. Bel +371 26207300.',
 };
 
 const keywordsByLocale: Record<string, string[]> = {
@@ -143,7 +143,7 @@ export default async function SniegaTirisanaPage({params}: Props) {
 					'Safe snow lowering and site protection',
 					'Post-work area cleanup',
 				],
-				primaryCta: 'Call +371 25612440',
+				primaryCta: 'Call +371 26207300',
 				secondaryCta: 'Request Free Inspection',
 				faqTitle: 'Frequently Asked Questions',
 			},
@@ -159,7 +159,7 @@ export default async function SniegaTirisanaPage({params}: Props) {
 					'Veilige afvoer van sneeuw en terreinbeveiliging',
 					'Opkuis na de werken',
 				],
-				primaryCta: 'Bel +371 25612440',
+				primaryCta: 'Bel +371 26207300',
 				secondaryCta: 'Vraag gratis inspectie aan',
 				faqTitle: 'Veelgestelde vragen',
 			},
@@ -180,7 +180,7 @@ export default async function SniegaTirisanaPage({params}: Props) {
 						</h1>
 						<p className="text-lg md:text-xl text-gray-300 max-w-3xl mb-8 leading-relaxed">{translated.heroBody}</p>
 						<div className="flex flex-col sm:flex-row gap-4">
-							<a href="tel:+37125612440" className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors text-lg">
+							<a href="tel:+37126207300" className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors text-lg">
 								{translated.primaryCta}
 							</a>
 							<Link href="/contact" className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-colors">
@@ -228,7 +228,7 @@ export default async function SniegaTirisanaPage({params}: Props) {
 			'@type': 'LocalBusiness',
 			'@id': 'https://uproof.eu/#organization',
 			name: 'UpRoof (SIA UpLift)',
-			telephone: '+37125612440',
+			telephone: '+37126207300',
 			email: 'contact@uproof.eu',
 			url: 'https://uproof.eu',
 			address: {
@@ -262,7 +262,7 @@ export default async function SniegaTirisanaPage({params}: Props) {
 		},
 		availableChannel: {
 			'@type': 'ServiceChannel',
-			servicePhone: {'@type': 'ContactPoint', telephone: '+37125612440', contactType: 'customer service', availableLanguage: ['lv', 'en', 'ru']},
+			servicePhone: {'@type': 'ContactPoint', telephone: '+37126207300', contactType: 'customer service', availableLanguage: ['lv', 'en', 'ru']},
 		},
 	};
 
@@ -294,9 +294,9 @@ export default async function SniegaTirisanaPage({params}: Props) {
 						Profesionāla pilna cikla jumta tīrīšana no sniega un ledus. Droša sniega novadīšana, lāsteku tīrīšana, teritorijas sakopšana un sniega izvešana. Ātra reaģēšana 1–3h.
 					</p>
 					<div className="flex flex-col sm:flex-row gap-4">
-						<a href="tel:+37125612440" className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors text-lg">
+						<a href="tel:+37126207300" className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors text-lg">
 							<svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-							+371 25612440
+							+371 26207300
 						</a>
 						<Link href="/contact" className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-colors">
 							Pieprasīt Bezmaksas Apskati
@@ -418,8 +418,8 @@ export default async function SniegaTirisanaPage({params}: Props) {
 					<p className="text-gray-600 mb-8 max-w-2xl mx-auto">
 						Katra objekta cena ir individuāla – tā ir atkarīga no jumta laukuma, slīpuma, sniega daudzuma un piekļuves sarežģītības. Zvaniet mums vai aizpildiet pieteikumu, un mēs sniegsim fiksētu cenu pirms darbu sākšanas.
 					</p>
-					<a href="tel:+37125612440" className="inline-block bg-gray-900 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-colors">
-						Zvaniet: +371 25612440
+					<a href="tel:+37126207300" className="inline-block bg-gray-900 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-colors">
+						Zvaniet: +371 26207300
 					</a>
 					<p className="text-sm text-gray-500 mt-4">Bezmaksas apskate un fiksēts cenas piedāvājums bez saistībām</p>
 				</div>
@@ -478,7 +478,7 @@ export default async function SniegaTirisanaPage({params}: Props) {
 					</h2>
 					<div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
 						{[
-							{step: '1', title: 'Zvaniet', desc: '+371 25612440 (24/7)'},
+							{step: '1', title: 'Zvaniet', desc: '+371 26207300 (24/7)'},
 							{step: '2', title: 'Apskate', desc: 'Bezmaksas apskate vai novērtējums pēc foto'},
 							{step: '3', title: 'Cenas piedāvājums', desc: 'Fiksēta cena pirms darbiem'},
 							{step: '4', title: 'Dokumenti', desc: 'Izpildes akts un garantija'},
@@ -504,9 +504,9 @@ export default async function SniegaTirisanaPage({params}: Props) {
 						Profesionāla sniega un ledus tīrīšana no jumta Rīgā un Pierīgā. Ātra reaģēšana, fiksētas cenas, sertificēta komanda.
 					</p>
 					<div className="flex flex-col sm:flex-row gap-4 justify-center">
-						<a href="tel:+37125612440" className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors text-lg">
+						<a href="tel:+37126207300" className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors text-lg">
 							<svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-							+371 25612440
+							+371 26207300
 						</a>
 						<a href="mailto:contact@uproof.eu" className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-colors">
 							<svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>

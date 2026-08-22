@@ -2,7 +2,7 @@
 
 import {useEffect, useRef, useState} from 'react';
 
-const WHATSAPP_URL = 'https://api.whatsapp.com/send?phone=37125612440&text=Sveiki%21%20K%C4%81%20varu%20pal%C4%ABdz%C4%93t%3F%20Rakstu%20par%20jumta%20pakalpojumiem.';
+const WHATSAPP_URL = 'https://api.whatsapp.com/send?phone=37126207300&text=Sveiki%21%20K%C4%81%20varu%20pal%C4%ABdz%C4%93t%3F%20Rakstu%20par%20jumta%20pakalpojumiem.';
 
 export default function WhatsAppFloatingButton() {
   const dragState = useRef({
